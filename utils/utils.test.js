@@ -46,3 +46,23 @@ it(`should verify that first and last name is correct`,()=>{
         lastname:"Chai"
     }).toBeAn('object');
 });
+
+
+//" done " needed because of the function is Asyn
+
+it(`Should Async Add 2 numbers`,(done)=>{
+    utils.asyncAdd(1,2,(sum)=>{
+        expect(sum).toBe(3).toBeA('number');
+        done();
+    });
+
+});
+
+
+it(`Should Async Square a numbers`,(done)=>{
+    utils.asyncSquare(2,(res)=>{
+        expect(res).toBe(4).toBeA('number');
+        done();
+    });
+
+});
